@@ -9,14 +9,10 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-         <RouterLink><el-button type="primary">Primary</el-button></RouterLink>
-
-
-
+         <RouterLink to="/test" ><el-button type="primary" @click="bt01"   >Primary</el-button></RouterLink>
 
       </nav>
     </div>
@@ -24,6 +20,43 @@ import HelloWorld from './components/HelloWorld.vue'
 
   <RouterView />
 </template>
+<script>
+import {request} from '@/utils/request.js'
+export default {
+  name: 'App',
+  data(){
+
+
+    return {
+
+    }
+
+  },
+  methods:{
+    bt01(){
+
+      request('/test',
+        {
+        "txt": 'test'
+      },
+      'post'
+      ).then(res => {
+        console.log(res.data);
+      })
+
+    },
+    //... other methods...
+
+  }
+
+
+
+
+
+}
+
+
+</script>
 
 <style scoped>
 header {

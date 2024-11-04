@@ -28,3 +28,7 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+src/backend/fastapp/__pycache__/app.cpython-38.pyc
+src/backend/__pycache__/app.cpython-38.pyc
+src/backend/__pycache__/server.cpython-38.pyc
+src/backend/fastapp/__pycache__/__init__.cpython-38.pyc

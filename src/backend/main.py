@@ -25,7 +25,7 @@ def fastServer():
     stream = StringIO()
     with redirect_stdout(stream):
         window = webview.create_window('flask pywebview application', "http://localhost:3000")
-        webview.start(func=uviconserverThread,debug=True)
+        webview.start(debug=True)
 
 def flaskServer():
     stream = StringIO()
@@ -37,5 +37,6 @@ if __name__ == '__main__':
     # 运行flask
     # flaskServer()
 #     运行fastapi
-    fastServer()
 
+    uviconserverThread()
+    fastServer()
