@@ -6,7 +6,7 @@ from threading import Thread
 import uvicorn
 import webview
 
-from fastapp.app import app as fastApp
+from app import app as fastApp
 
 logger = logging.getLogger(__name__)
 
@@ -24,14 +24,11 @@ def fastServer():
     print()
     stream = StringIO()
     with redirect_stdout(stream):
-        window = webview.create_window('flask pywebview application', "http://localhost:3000")
+        # window = webview.create_window('flask pywebview application', "http://localhost:3000")
+        window = webview.create_window('flask pywebview application', "http://localhost:8000")
         webview.start(debug=True)
 
-def flaskServer():
-    stream = StringIO()
-    with redirect_stdout(stream):
-        window = webview.create_window('fastapi pywebview application', "http://localhost:3000")
-        webview.start(debug=True)
+
 
 if __name__ == '__main__':
     # 运行flask

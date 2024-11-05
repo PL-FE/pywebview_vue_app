@@ -49,7 +49,7 @@ const env=import.meta.env
 // 封装 GET POST 请求并导出
 export function request(url='',params={},type='POST') {
   console.log("runtime env", env)
-  url = env.VITE_VUE_APP_BASE_API + url
+  url = env.VITE_MODE==='production' ?url:env.VITE_VUE_APP_BASE_API +url;
 //设置 url params type 的默认值
   return new Promise((resolve, reject) => {
     let promise
