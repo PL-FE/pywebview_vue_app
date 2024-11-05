@@ -35,3 +35,5 @@ src/backend/fastapp/__pycache__/__init__.cpython-38.pyc
 /build/
 gui/*
 
+__pycache__/
+src/frontend/package-lock.json
