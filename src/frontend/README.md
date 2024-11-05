@@ -1,35 +1,94 @@
-# pywebview01
+# pywebview + FastApi+Vue+ElementUiPlus 
 
-This template should help get you started developing with Vue 3 in Vite.
+# 1.介绍  
 
-## Recommended IDE Setup
+**桌面应用开发，打包的环境整合**，**开发时**可使用node作为前端服务器，fastapi作为后端服务器（在pywebview启动时启动）。此时需要分别启动前后端的服务器。打包时只需启动pywebview即可（此时vue生成的dist会被挂在fastapi的服务器（uvicorn）上）
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Customize configuration
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+**项目目录：**
 
-## Project Setup
+----pywebview_vue_app
 
-```sh
-npm install
+├─dist 打包成exe的输出文件
+
+├─gui vue打包后的静态文件
+├─src
+│  ├─backend  python代码
+│  └─frontend vue项目所在文件
+
+
+
+
+
+# 2.使用
+
+## 2.1安装依赖
+
+
+
+## （推荐）conda下使用
+
+**conda下安装python,node ** 
+
+```cmd
+#安装python
+conda create -n py38 python=3.8
+# 激活python环境
+conda activate py38
+#在 Conda 环境中安装 Node.js
+conda install -c conda-forge nodejs=v22.9.0
+#
+验证
+python --version  # 检查 Python 版本
+node -v           # 检查 Node.js 版本
+npm -v            # 检查 npm 版本
+
 ```
 
-### Compile and Hot-Reload for Development
+**安装项目依赖**  
 
-```sh
-npm run dev
+python的依赖
+
+```cmd
+pip install -r requirements.txt
+
 ```
 
-### Compile and Minify for Production
+node依赖
 
-```sh
-npm run build
+```
+npm install --registry=http://registry.npmmirror.com  
 ```
 
-### Lint with [ESLint](https://eslint.org/)
 
-```sh
-npm run lint
+
+# 3.启动
+
+ main.py
+
+```python
+if __name__ == '__main__':
+    find_port()
+    uviconserverThread()
+    fastServer("prod") # 值若为prod模拟打包后的启动，为dev则是开发环境启动。
 ```
+
+**prod和dev的区别**
+
+prod 此时启动项目后gui下的文件会被挂载到fastapi服务下，同时启动pywenview, 此时前端不用单独服务器了如（node）  
+
+dev 此时启动项目仅仅启动fastapi和webview,前端需要使用npm run dev 单独启动。好处：方便前端页面开发  
+
+
+
+
+
+# 4. 其他...
+
+
+
+
+
+**Apache License 2.0**
+
