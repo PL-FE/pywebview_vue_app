@@ -57,8 +57,8 @@ pip install -r requirements.txt
 
 node依赖
 
-```
-npm install --registry=http://registry.npmmirror.com  
+```cmd
+npm install  --registry=http://registry.npmmirror.com  
 ```
 
 
@@ -84,7 +84,33 @@ dev 此时启动项目仅仅启动fastapi和webview,前端需要使用npm run de
 
 
 
-# 4. 其他...
+# 4.打包
+
+修改main.py 如下
+
+```
+fastServer("prod") 
+
+
+```
+
+```
+
+
+npm   run build 
+
+pyinstaller .\main.spec
+
+
+```
+
+执行build.bat
+
+**详见build.bat**
+
+
+
+# todo...
 
 
 
