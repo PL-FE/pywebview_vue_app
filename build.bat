@@ -1,5 +1,5 @@
 
-conda activate yolo8work && ^
+conda activate py38 && ^
 echo building frontend ... && ^
 cd .\src\frontend\ && ^
 npm run build && ^
